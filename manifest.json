@@ -6,18 +6,20 @@
     {
       "src": "https://img.icons8.com/fluency/192/piano.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
     },
     {
       "src": "https://img.icons8.com/fluency/512/piano.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/",
   "background_color": "#020617",
   "display": "standalone",
-  "scope": "./",
+  "scope": "/",
   "theme_color": "#0ea5e9",
   "description": "Dicionário de acordes, campo harmônico e escalas para tecladistas profissionais."
 }
