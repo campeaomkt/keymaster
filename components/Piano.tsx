@@ -92,19 +92,11 @@ const Piano: React.FC<PianoProps> = ({ activeNotes, octaves = 2 }) => {
 
       <style>{`
         .no-scrollbar::-webkit-scrollbar {
-          height: 6px;
-        }
-        .no-scrollbar::-webkit-scrollbar-track {
-          background: #0f172a;
-          border-radius: 10px;
-        }
-        .no-scrollbar::-webkit-scrollbar-thumb {
-          background: #334155;
-          border-radius: 10px;
+          display: none;
         }
         .no-scrollbar {
           -ms-overflow-style: none;
-          scrollbar-width: thin;
+          scrollbar-width: none;
         }
         .piano-key-white.active {
           background: linear-gradient(to bottom, #38bdf8, #0ea5e9) !important;

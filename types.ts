@@ -30,11 +30,13 @@ export enum ScaleType {
   PentatonicMajor = 'Pentatônica Maior',
   PentatonicMinor = 'Pentatônica Menor',
   Blues = 'Blues',
-  Dorian = 'Dórico',
-  Phrygian = 'Frígio',
-  Lydian = 'Lídio',
-  Mixolydian = 'Mixolídio',
-  Locrian = 'Lócrio'
+  Ionian = 'Jônio (Modo I)',
+  Dorian = 'Dórico (Modo II)',
+  Phrygian = 'Frígio (Modo III)',
+  Lydian = 'Lídio (Modo IV)',
+  Mixolydian = 'Mixolídio (Modo V)',
+  Aeolian = 'Eólio (Modo VI)',
+  Locrian = 'Lócrio (Modo VII)'
 }
 
 export interface Exercise {

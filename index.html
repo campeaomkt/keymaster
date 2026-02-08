@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KeyMaster - Guia do Tecladista</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#020617">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="KeyMaster">
+    <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/192/piano.png">
+    <link rel="manifest" href="manifest.json">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -13,6 +22,10 @@
         .piano-key-black { height: 70px; width: 24px; background: #1e293b; color: white; cursor: pointer; border-radius: 0 0 2px 2px; z-index: 10; margin-left: -12px; margin-right: -12px; position: relative; }
         .piano-key-white.active { background: #38bdf8; }
         .piano-key-black.active { background: #0ea5e9; }
+        
+        /* Utilitários globais para PWA */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 <script type="importmap">
 {
