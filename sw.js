@@ -1,9 +1,9 @@
 
-const CACHE_NAME = 'keymaster-v3';
+const CACHE_NAME = 'keymaster-v4';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json'
+  './',
+  './index.html',
+  './manifest.json'
 ];
 
 self.addEventListener('install', (event) => {
@@ -27,29 +27,29 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Para navegação (abrir o app), sempre tentamos o cache primeiro para evitar 404s de servidor
+  // Tratamento especial para navegação (abrir o app ou dar refresh)
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          // Se o servidor retornar 404 ou erro, usamos o cache
+          // Se o servidor retornar erro ou não encontrar o arquivo, entrega o index do cache
           if (!response || response.status !== 200) {
-            return caches.match('/index.html') || caches.match('/');
+            return caches.match('./index.html');
           }
           return response;
         })
         .catch(() => {
-          // Se estiver offline ou erro de rede, usamos o cache
-          return caches.match('/index.html') || caches.match('/');
+          // Se estiver offline, entrega o index do cache
+          return caches.match('./index.html');
         })
     );
     return;
   }
 
-  // Estratégia padrão para outros recursos
+  // Para outros recursos (JS, Imagens, CSS), tenta cache primeiro, depois rede
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+    caches.match(event.request).then((cachedResponse) => {
+      return cachedResponse || fetch(event.request);
     })
   );
 });
